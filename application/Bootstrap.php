@@ -62,20 +62,8 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
 	    $dispatcher->getInstance()->setErrorHandler(array($this,'error_handler'));
     }
 
-    public function _initModules(Yaf\Dispatcher $dispatcher)
-    {
-//        $app = $dispatcher->getApplication();
-//        $modules = $app->getModules();
-//        foreach ($modules as $module) {
-//            if ('index' == strtolower($module)) continue;
-//            require_once $app->getAppDirectory() . "/modules" . "/$module" . "/_init.php";
-//        }
-    }
-
     public function _initLog( \Yaf\Dispatcher $dispatcher ) {
         //初始化日志打印
-//        $log = new \library\Log();
-        \library\Log::init(APP_NAME, APP_LOG_PATH, \library\Log::XH_LOG_ALL);
         \library\Log::addLogNode("ip",       \library\Util\Client::getIp());
         \library\Log::addLogNode("ua",       __server_get_data('HTTP_USER_AGENT'));
         \library\Log::addLogNode("refer",    __server_get_data('HTTP_REFERER'));

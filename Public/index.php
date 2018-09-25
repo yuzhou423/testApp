@@ -11,7 +11,6 @@ define('CONTROLLER_PATH', APP_PATH.'/Controllers');
 define('COMMON_PATH', ROOT_PATH.'/application/Common');
 define('APP_LOG_PATH',ROOT_PATH.'/log');
 define('MODEL_PATH',   APP_PATH . '/Model');
-
 \Yaf\Loader::import( COMMON_PATH . '/Static.php' );
 $application = new \Yaf\Application(require(CONFIG_FILE));
 $application->bootstrap()->run();
