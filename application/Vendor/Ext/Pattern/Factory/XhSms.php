@@ -29,8 +29,8 @@ class XhSms{
         if(!in_array($plat,array(self::ALIYUN, self::TXYUN))){
             return '参数错误';
         }
-        echo '单条短信发送【调用多条短信】<br>';
-        self::sendMultiSms($params, $plat);  // 单条短信调用多条短信
+        $res = self::sendMultiSms($params, $plat);  // 单条短信调用多条短信
+        return array('msg'=>'单条短信发送【调用多条短信】', "res"=>$res);
         
     }
     
@@ -41,8 +41,9 @@ class XhSms{
         if(!in_array($plat,array(self::ALIYUN, self::TXYUN))){
             return '参数错误';
         }
-        echo '多条短信发送<br>';
         $YunSms = SmsFactory::createSms( $plat );
-        $YunSms->sendSms($params);
+        $res    = $YunSms->sendSms($params);
+        return array('msg'=>'多条短信发送', "res"=>$res);
+        
     }
 }
