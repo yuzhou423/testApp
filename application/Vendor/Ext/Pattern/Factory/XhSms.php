@@ -3,8 +3,9 @@
  * 工厂模式之短信入口
  * @author wangdb
  */
-include '../../Ext/Pattern/Factory/SmsFactory.php';
+namespace Ext\Pattern\Factory;
 
+use Ext\Pattern\Factory\SmsFactory;
 class XhSms{
     CONST   ALIYUN     = 'Aliyun';  // 阿里云短信
     CONST   TXYUN      = 'Txyun';  // 腾讯云短信

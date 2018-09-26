@@ -1,5 +1,6 @@
 <?php
 use Controllers\Controller;
+use Ext\Pattern\Factory\XhSms;
 class IndexController extends Controller {
     /**
      * 测试方法

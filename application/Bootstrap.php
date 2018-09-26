@@ -28,13 +28,11 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract{
         $autoload->addClassMap(array(
             'library'     => CORES_PATH.'/library',
             'Logic'       => APP_PATH.'/Logic',
-            'Lib'         => APP_PATH.'/Lib',
             'core'        => CORES_PATH,
             'Controllers' => CONTROLLER_PATH,
             'Model'       => MODEL_PATH,
         ));
         require APP_PATH . '/Vendor/autoload.php';
-        require APP_PATH . '/Ext/autoload.php';
         spl_autoload_register(array($autoload, 'loader'));
         $dispatcher->autoload = $autoload;
     }
