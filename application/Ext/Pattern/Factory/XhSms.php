@@ -3,7 +3,7 @@
  * 工厂模式之短信入口
  * @author wangdb
  */
-include '../../Vendor/Pattern/Factory/SmsFactory.php';
+include '../../Ext/Pattern/Factory/SmsFactory.php';
 
 class XhSms{
     CONST   ALIYUN     = 'Aliyun';  // 阿里云短信
