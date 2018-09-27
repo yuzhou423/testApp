@@ -22,10 +22,6 @@ class HookPlugin extends \Yaf\Plugin_Abstract {
             $request->module = $config->module;
             $request->controller = $config->controller;
             $request->action = $config->action;
-            
-            
-            var_dump($request);
-            
             $domain = strtolower(explode('.', $_SERVER['HTTP_HOST'])[0]);
             $domainConf = \Yaf\Registry::get("config")->application->domain;
             if (isset($domainConf->$domain) && !empty($domainConf->$domain)) {
@@ -39,9 +35,6 @@ class HookPlugin extends \Yaf\Plugin_Abstract {
             $request->controller = str_replace(' ', '', ucwords($request->controller));
             $request->action = str_replace('_', ' ', $request->action);
             $request->action = str_replace(' ', '', ucwords($request->action));
-
-            var_dump($request);
-            
             if (count($tmp) == 3) {
                 if (isset($tmp[0])) {
                     $request->module = $tmp[0];

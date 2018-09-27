@@ -17,9 +17,6 @@ class IndexController extends Controller {
      * 用户方法测试
      */
     public function userAction(){
-        
-        var_dump(111111);
-        exit;
         $idKeys = [1];
         $info = UserModel::gi()->getRealDataByIdKeys($idKeys);
         

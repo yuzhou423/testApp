@@ -1,10 +1,16 @@
 <?php
-namespace Model;
+namespace Model\Common;
 
 use core\Model;
 class CacheModel extends Model{
+    use CacheModelTools;  
     
     protected $pk = "id";
+    
+    public function __construct() {
+        parent::__construct ();
+    }
+    
     
     /**
      * 根据主键ID获取真实的数据
